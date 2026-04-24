@@ -1,0 +1,83 @@
+{
+  "formCards": [
+    {
+      "url": "https://www.sportsbetform.com.au/436044/3308967/",
+      "track": "Gundagai",
+      "race": 8,
+      "horses": {
+        "1": "Choice Witness",
+        "2": "Cyclone Rupert",
+        "3": "Atmospheric Rock",
+        "4": "Soul Lady",
+        "5": "Clifton Springs",
+        "6": "Wal'S Angels",
+        "7": "Caravanserai",
+        "8": "Pretty Penguin",
+        "9": "Rubi Air",
+        "10": "Heavenly Kiss",
+        "11": "Spirits Burn Deep",
+        "12": "Ace Of Lace",
+        "13": "Wonder Step",
+        "14": "Jackpot Star",
+        "15": "Spurline",
+        "16": "A Book Of Days",
+        "17": "Jannik",
+        "18": "Molteuno"
+      }
+    }
+  ],
+  "barrierResults": {
+    "Gundagai_8": {
+      "firstBarrier": 14,
+      "secondBarrier": 2,
+      "thirdBarrier": 9
+    }
+  },
+  "bets": [
+    {
+      "id": "bet_1",
+      "horse": "Rubi Air",
+      "track": "Gundagai",
+      "race": 8,
+      "betType": "PLACE",
+      "stake": 100,
+      "odds": 31
+    },
+    {
+      "id": "bet_2",
+      "horse": "Jannik",
+      "track": "Gundagai",
+      "race": 8,
+      "betType": "WIN",
+      "stake": 100,
+      "odds": 81
+    },
+    {
+      "id": "bet_3",
+      "horse": "A Book Of Days",
+      "track": "Gundagai",
+      "race": 8,
+      "betType": "PLACE",
+      "stake": 100,
+      "odds": 71
+    },
+    {
+      "id": "bet_4",
+      "horse": "Spirits Burn Deep",
+      "track": "Gundagai",
+      "race": 8,
+      "betType": "WIN",
+      "stake": 100,
+      "odds": 31
+    },
+    {
+      "id": "bet_5",
+      "horse": "Ace Of Lace",
+      "track": "Gundagai",
+      "race": 8,
+      "betType": "PLACE",
+      "stake": 100,
+      "odds": 23
+    }
+  ]
+}

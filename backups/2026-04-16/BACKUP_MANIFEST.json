@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-04-16T03:31:55.564Z",
+  "database": "/Users/mora0145/Downloads/TrackWise/backups/2026-04-16/trackwise-1776310315462.db",
+  "exports": [
+    "kb-intelligence.json",
+    "results.json",
+    "kb.json"
+  ],
+  "statistics": {
+    "backupDate": "2026-04-16T03:31:55.564Z",
+    "backupPath": "/Users/mora0145/Downloads/TrackWise/backups/2026-04-16"
+  }
+}

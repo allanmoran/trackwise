@@ -1,0 +1,2024 @@
+{
+  "meta": {
+    "totalRaces": 39,
+    "totalBets": 173,
+    "noBets": 0,
+    "startedAt": "2026-04-11",
+    "lastUpdated": "2026-04-16T02:41:24.112Z"
+  },
+  "bankroll": {
+    "start": 5000,
+    "current": 1772.0500000000002,
+    "peak": 5000,
+    "trough": 1772.0500000000002,
+    "totalPL": -3227.95,
+    "maxDrawdown": 3227.95,
+    "history": [
+      4980,
+      4960,
+      4940,
+      4920,
+      4900,
+      4880,
+      4860,
+      4840,
+      4820,
+      4800,
+      4780,
+      4760,
+      4740,
+      4720,
+      4700,
+      4680,
+      4660,
+      4640,
+      4620,
+      4600,
+      4580,
+      4560,
+      4540,
+      4520,
+      4500,
+      4480,
+      4460,
+      4440,
+      4420,
+      4400,
+      4380,
+      4360,
+      4340,
+      4320,
+      4300,
+      4280,
+      4260,
+      4240,
+      4220,
+      4200,
+      4180,
+      4160,
+      4140,
+      4120,
+      4100,
+      4080,
+      4060,
+      4040,
+      4020,
+      4000,
+      3980,
+      3960,
+      3940,
+      3920,
+      3900,
+      3880,
+      3860,
+      3840,
+      3820,
+      3800,
+      3780,
+      3760,
+      3740,
+      3720,
+      3700,
+      3680,
+      3660,
+      3640,
+      3620,
+      3600,
+      3580,
+      3560,
+      3540,
+      3520,
+      3500,
+      3480,
+      3460,
+      3440,
+      3420,
+      3400,
+      3380,
+      3360,
+      3340,
+      3320,
+      3300,
+      3280,
+      3260,
+      3240,
+      3220,
+      3200,
+      3180,
+      3160,
+      3140,
+      3120,
+      3100,
+      3050,
+      3030,
+      3010,
+      2990,
+      2970,
+      2950,
+      2930,
+      2910,
+      2890,
+      2870,
+      2850,
+      2830,
+      2810,
+      2790,
+      2770,
+      2750,
+      2730,
+      2710,
+      2690,
+      2670,
+      2650,
+      2630,
+      2610,
+      2590,
+      2570,
+      2550,
+      2515,
+      2490,
+      2470,
+      2450,
+      2430,
+      2410,
+      2390,
+      2370,
+      2350,
+      2330,
+      2310,
+      2290,
+      2270,
+      2250,
+      2230,
+      2210,
+      2190,
+      2170,
+      2150,
+      2130,
+      2110,
+      2090,
+      2070,
+      2050,
+      2030,
+      2010,
+      1990,
+      1970,
+      1950,
+      1930,
+      1910,
+      1890,
+      1850,
+      1815,
+      1790,
+      1770,
+      1750,
+      1710,
+      1660,
+      1697,
+      1789,
+      1806.81,
+      1823.69,
+      1833.3200000000002,
+      1840.5700000000002,
+      1820.5700000000002,
+      1780.5700000000002,
+      1755.5700000000002,
+      1767.42,
+      1791.0500000000002,
+      1802.0500000000002,
+      1772.0500000000002
+    ]
+  },
+  "kb": {
+    "totalSettled": 173,
+    "performanceByTrack": [
+      {
+        "label": "Alice Springs",
+        "bets": 44,
+        "wins": 2,
+        "places": 4,
+        "staked": 980,
+        "returned": 375.57,
+        "winStrike": 4.5,
+        "placeStrike": 13.6,
+        "roi": -61.7
+      },
+      {
+        "label": "Bowen",
+        "bets": 27,
+        "wins": 0,
+        "places": 2,
+        "staked": 560,
+        "returned": 95.47999999999999,
+        "winStrike": 0,
+        "placeStrike": 7.4,
+        "roi": -83
+      },
+      {
+        "label": "Caulfield",
+        "bets": 12,
+        "wins": 0,
+        "places": 1,
+        "staked": 275,
+        "returned": 36,
+        "winStrike": 0,
+        "placeStrike": 8.3,
+        "roi": -86.9
+      },
+      {
+        "label": "Ascot",
+        "bets": 45,
+        "wins": 0,
+        "places": 0,
+        "staked": 900,
+        "returned": 0,
+        "winStrike": 0,
+        "placeStrike": 0,
+        "roi": -100
+      },
+      {
+        "label": "Ballina",
+        "bets": 31,
+        "wins": 0,
+        "places": 0,
+        "staked": 625,
+        "returned": 0,
+        "winStrike": 0,
+        "placeStrike": 0,
+        "roi": -100
+      },
+      {
+        "label": "Donald",
+        "bets": 1,
+        "wins": 0,
+        "places": 0,
+        "staked": 50,
+        "returned": 0,
+        "winStrike": 0,
+        "placeStrike": 0,
+        "roi": -100
+      },
+      {
+        "label": "Geraldton",
+        "bets": 6,
+        "wins": 0,
+        "places": 0,
+        "staked": 130,
+        "returned": 0,
+        "winStrike": 0,
+        "placeStrike": 0,
+        "roi": -100
+      },
+      {
+        "label": "Hawkesbury",
+        "bets": 2,
+        "wins": 0,
+        "places": 0,
+        "staked": 75,
+        "returned": 0,
+        "winStrike": 0,
+        "placeStrike": 0,
+        "roi": -100
+      },
+      {
+        "label": "Longreach",
+        "bets": 1,
+        "wins": 0,
+        "places": 0,
+        "staked": 20,
+        "returned": 0,
+        "winStrike": 0,
+        "placeStrike": 0,
+        "roi": -100
+      },
+      {
+        "label": "Sapphire Coast",
+        "bets": 1,
+        "wins": 0,
+        "places": 0,
+        "staked": 25,
+        "returned": 0,
+        "winStrike": 0,
+        "placeStrike": 0,
+        "roi": -100
+      },
+      {
+        "label": "Scone",
+        "bets": 1,
+        "wins": 0,
+        "places": 0,
+        "staked": 35,
+        "returned": 0,
+        "winStrike": 0,
+        "placeStrike": 0,
+        "roi": -100
+      },
+      {
+        "label": "Seymour",
+        "bets": 1,
+        "wins": 0,
+        "places": 0,
+        "staked": 40,
+        "returned": 0,
+        "winStrike": 0,
+        "placeStrike": 0,
+        "roi": -100
+      },
+      {
+        "label": "Townsville",
+        "bets": 1,
+        "wins": 0,
+        "places": 0,
+        "staked": 20,
+        "returned": 0,
+        "winStrike": 0,
+        "placeStrike": 0,
+        "roi": -100
+      }
+    ],
+    "performanceByBetType": [
+      {
+        "label": "PLACE",
+        "bets": 5,
+        "wins": 2,
+        "places": 2,
+        "staked": 170,
+        "returned": 295.51,
+        "winStrike": 40,
+        "placeStrike": 80,
+        "roi": 73.8
+      },
+      {
+        "label": "WIN",
+        "bets": 168,
+        "wins": 0,
+        "places": 5,
+        "staked": 3565,
+        "returned": 211.54,
+        "winStrike": 0,
+        "placeStrike": 3,
+        "roi": -94.1
+      }
+    ]
+  },
+  "bets": [
+    {
+      "id": 101,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Jannik",
+      "track": "Ascot",
+      "race_number": 10,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 102,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "A Book Of Days",
+      "track": "Ascot",
+      "race_number": 10,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 103,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Rubi Air",
+      "track": "Ascot",
+      "race_number": 10,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 104,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Spirits Burn Deep",
+      "track": "Ascot",
+      "race_number": 10,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 105,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Ace Of Lace",
+      "track": "Ascot",
+      "race_number": 10,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 96,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Jannik",
+      "track": "Ascot",
+      "race_number": 8,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 97,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "A Book Of Days",
+      "track": "Ascot",
+      "race_number": 8,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 98,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Rubi Air",
+      "track": "Ascot",
+      "race_number": 8,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 99,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Spirits Burn Deep",
+      "track": "Ascot",
+      "race_number": 8,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 100,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Ace Of Lace",
+      "track": "Ascot",
+      "race_number": 8,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 56,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Jannik",
+      "track": "Alice Springs",
+      "race_number": 7,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 57,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "A Book Of Days",
+      "track": "Alice Springs",
+      "race_number": 7,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 58,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Rubi Air",
+      "track": "Alice Springs",
+      "race_number": 7,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 59,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Spirits Burn Deep",
+      "track": "Alice Springs",
+      "race_number": 7,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 60,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Ace Of Lace",
+      "track": "Alice Springs",
+      "race_number": 7,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 91,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Jannik",
+      "track": "Ascot",
+      "race_number": 7,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 92,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "A Book Of Days",
+      "track": "Ascot",
+      "race_number": 7,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 93,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Spirits Burn Deep",
+      "track": "Ascot",
+      "race_number": 7,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 94,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Rubi Air",
+      "track": "Ascot",
+      "race_number": 7,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 95,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Ace Of Lace",
+      "track": "Ascot",
+      "race_number": 7,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 51,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Jannik",
+      "track": "Alice Springs",
+      "race_number": 6,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 52,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "A Book Of Days",
+      "track": "Alice Springs",
+      "race_number": 6,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 53,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Rubi Air",
+      "track": "Alice Springs",
+      "race_number": 6,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 54,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Spirits Burn Deep",
+      "track": "Alice Springs",
+      "race_number": 6,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 55,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Ace Of Lace",
+      "track": "Alice Springs",
+      "race_number": 6,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 86,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Jannik",
+      "track": "Ascot",
+      "race_number": 6,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 87,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "A Book Of Days",
+      "track": "Ascot",
+      "race_number": 6,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 88,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Spirits Burn Deep",
+      "track": "Ascot",
+      "race_number": 6,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 89,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Rubi Air",
+      "track": "Ascot",
+      "race_number": 6,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 90,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Ace Of Lace",
+      "track": "Ascot",
+      "race_number": 6,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 126,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Jannik",
+      "track": "Ballina",
+      "race_number": 6,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 127,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "A Book Of Days",
+      "track": "Ballina",
+      "race_number": 6,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 128,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Rubi Air",
+      "track": "Ballina",
+      "race_number": 6,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 129,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Spirits Burn Deep",
+      "track": "Ballina",
+      "race_number": 6,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 130,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Ace Of Lace",
+      "track": "Ballina",
+      "race_number": 6,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 46,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Jannik",
+      "track": "Alice Springs",
+      "race_number": 5,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 47,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "A Book Of Days",
+      "track": "Alice Springs",
+      "race_number": 5,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 48,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Rubi Air",
+      "track": "Alice Springs",
+      "race_number": 5,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 49,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Spirits Burn Deep",
+      "track": "Alice Springs",
+      "race_number": 5,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 50,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Ace Of Lace",
+      "track": "Alice Springs",
+      "race_number": 5,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 81,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Jannik",
+      "track": "Ascot",
+      "race_number": 5,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 82,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "A Book Of Days",
+      "track": "Ascot",
+      "race_number": 5,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 83,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Spirits Burn Deep",
+      "track": "Ascot",
+      "race_number": 5,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 84,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Rubi Air",
+      "track": "Ascot",
+      "race_number": 5,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 85,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Ace Of Lace",
+      "track": "Ascot",
+      "race_number": 5,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 121,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Jannik",
+      "track": "Ballina",
+      "race_number": 5,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 122,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "A Book Of Days",
+      "track": "Ballina",
+      "race_number": 5,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 123,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Rubi Air",
+      "track": "Ballina",
+      "race_number": 5,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 124,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Spirits Burn Deep",
+      "track": "Ballina",
+      "race_number": 5,
+      "date": "2026-04-12"
+    },
+    {
+      "id": 125,
+      "bet_type": "WIN",
+      "stake": 20,
+      "closing_odds": null,
+      "result": "LOSS",
+      "profit_loss": -20,
+      "horse_name": "Ace Of Lace",
+      "track": "Ballina",
+      "race_number": 5,
+      "date": "2026-04-12"
+    }
+  ],
+  "performance": {
+    "summary": {
+      "totalRaces": 39,
+      "totalBets": 173,
+      "noBets": 0,
+      "wins": 2,
+      "places": 7,
+      "losses": 164,
+      "winStrike": 1,
+      "placeStrike": 5,
+      "roi": -86,
+      "totalStaked": 3735,
+      "growth": -3227.95,
+      "maxDrawdown": 0
+    },
+    "byTrack": [
+      {
+        "label": "Alice Springs",
+        "bets": 44,
+        "wins": 2,
+        "places": 4,
+        "staked": 980,
+        "returned": 375.57,
+        "winStrike": 4.5,
+        "placeStrike": 13.6,
+        "roi": -61.7
+      },
+      {
+        "label": "Bowen",
+        "bets": 27,
+        "wins": 0,
+        "places": 2,
+        "staked": 560,
+        "returned": 95.47999999999999,
+        "winStrike": 0,
+        "placeStrike": 7.4,
+        "roi": -83
+      },
+      {
+        "label": "Caulfield",
+        "bets": 12,
+        "wins": 0,
+        "places": 1,
+        "staked": 275,
+        "returned": 36,
+        "winStrike": 0,
+        "placeStrike": 8.3,
+        "roi": -86.9
+      },
+      {
+        "label": "Ascot",
+        "bets": 45,
+        "wins": 0,
+        "places": 0,
+        "staked": 900,
+        "returned": 0,
+        "winStrike": 0,
+        "placeStrike": 0,
+        "roi": -100
+      },
+      {
+        "label": "Ballina",
+        "bets": 31,
+        "wins": 0,
+        "places": 0,
+        "staked": 625,
+        "returned": 0,
+        "winStrike": 0,
+        "placeStrike": 0,
+        "roi": -100
+      },
+      {
+        "label": "Donald",
+        "bets": 1,
+        "wins": 0,
+        "places": 0,
+        "staked": 50,
+        "returned": 0,
+        "winStrike": 0,
+        "placeStrike": 0,
+        "roi": -100
+      },
+      {
+        "label": "Geraldton",
+        "bets": 6,
+        "wins": 0,
+        "places": 0,
+        "staked": 130,
+        "returned": 0,
+        "winStrike": 0,
+        "placeStrike": 0,
+        "roi": -100
+      },
+      {
+        "label": "Hawkesbury",
+        "bets": 2,
+        "wins": 0,
+        "places": 0,
+        "staked": 75,
+        "returned": 0,
+        "winStrike": 0,
+        "placeStrike": 0,
+        "roi": -100
+      },
+      {
+        "label": "Longreach",
+        "bets": 1,
+        "wins": 0,
+        "places": 0,
+        "staked": 20,
+        "returned": 0,
+        "winStrike": 0,
+        "placeStrike": 0,
+        "roi": -100
+      },
+      {
+        "label": "Sapphire Coast",
+        "bets": 1,
+        "wins": 0,
+        "places": 0,
+        "staked": 25,
+        "returned": 0,
+        "winStrike": 0,
+        "placeStrike": 0,
+        "roi": -100
+      },
+      {
+        "label": "Scone",
+        "bets": 1,
+        "wins": 0,
+        "places": 0,
+        "staked": 35,
+        "returned": 0,
+        "winStrike": 0,
+        "placeStrike": 0,
+        "roi": -100
+      },
+      {
+        "label": "Seymour",
+        "bets": 1,
+        "wins": 0,
+        "places": 0,
+        "staked": 40,
+        "returned": 0,
+        "winStrike": 0,
+        "placeStrike": 0,
+        "roi": -100
+      },
+      {
+        "label": "Townsville",
+        "bets": 1,
+        "wins": 0,
+        "places": 0,
+        "staked": 20,
+        "returned": 0,
+        "winStrike": 0,
+        "placeStrike": 0,
+        "roi": -100
+      }
+    ],
+    "byCondition": [],
+    "byOddsRange": [],
+    "byBetType": [
+      {
+        "label": "PLACE",
+        "bets": 5,
+        "wins": 2,
+        "places": 2,
+        "staked": 170,
+        "returned": 295.51,
+        "winStrike": 40,
+        "placeStrike": 80,
+        "roi": 73.8
+      },
+      {
+        "label": "WIN",
+        "bets": 168,
+        "wins": 0,
+        "places": 5,
+        "staked": 3565,
+        "returned": 211.54,
+        "winStrike": 0,
+        "placeStrike": 3,
+        "roi": -94.1
+      }
+    ],
+    "byScoreBand": [],
+    "byBarrier": [],
+    "byDistance": [],
+    "byFieldSize": [],
+    "roiCurve": [
+      {
+        "race": 1,
+        "roi": -100,
+        "bank": 4980
+      },
+      {
+        "race": 2,
+        "roi": -100,
+        "bank": 4960
+      },
+      {
+        "race": 3,
+        "roi": -100,
+        "bank": 4940
+      },
+      {
+        "race": 4,
+        "roi": -100,
+        "bank": 4920
+      },
+      {
+        "race": 5,
+        "roi": -100,
+        "bank": 4900
+      },
+      {
+        "race": 6,
+        "roi": -100,
+        "bank": 4880
+      },
+      {
+        "race": 7,
+        "roi": -100,
+        "bank": 4860
+      },
+      {
+        "race": 8,
+        "roi": -100,
+        "bank": 4840
+      },
+      {
+        "race": 9,
+        "roi": -100,
+        "bank": 4820
+      },
+      {
+        "race": 10,
+        "roi": -100,
+        "bank": 4800
+      },
+      {
+        "race": 11,
+        "roi": -100,
+        "bank": 4780
+      },
+      {
+        "race": 12,
+        "roi": -100,
+        "bank": 4760
+      },
+      {
+        "race": 13,
+        "roi": -100,
+        "bank": 4740
+      },
+      {
+        "race": 14,
+        "roi": -100,
+        "bank": 4720
+      },
+      {
+        "race": 15,
+        "roi": -100,
+        "bank": 4700
+      },
+      {
+        "race": 16,
+        "roi": -100,
+        "bank": 4680
+      },
+      {
+        "race": 17,
+        "roi": -100,
+        "bank": 4660
+      },
+      {
+        "race": 18,
+        "roi": -100,
+        "bank": 4640
+      },
+      {
+        "race": 19,
+        "roi": -100,
+        "bank": 4620
+      },
+      {
+        "race": 20,
+        "roi": -100,
+        "bank": 4600
+      },
+      {
+        "race": 21,
+        "roi": -100,
+        "bank": 4580
+      },
+      {
+        "race": 22,
+        "roi": -100,
+        "bank": 4560
+      },
+      {
+        "race": 23,
+        "roi": -100,
+        "bank": 4540
+      },
+      {
+        "race": 24,
+        "roi": -100,
+        "bank": 4520
+      },
+      {
+        "race": 25,
+        "roi": -100,
+        "bank": 4500
+      },
+      {
+        "race": 26,
+        "roi": -100,
+        "bank": 4480
+      },
+      {
+        "race": 27,
+        "roi": -100,
+        "bank": 4460
+      },
+      {
+        "race": 28,
+        "roi": -100,
+        "bank": 4440
+      },
+      {
+        "race": 29,
+        "roi": -100,
+        "bank": 4420
+      },
+      {
+        "race": 30,
+        "roi": -100,
+        "bank": 4400
+      },
+      {
+        "race": 31,
+        "roi": -100,
+        "bank": 4380
+      },
+      {
+        "race": 32,
+        "roi": -100,
+        "bank": 4360
+      },
+      {
+        "race": 33,
+        "roi": -100,
+        "bank": 4340
+      },
+      {
+        "race": 34,
+        "roi": -100,
+        "bank": 4320
+      },
+      {
+        "race": 35,
+        "roi": -100,
+        "bank": 4300
+      },
+      {
+        "race": 36,
+        "roi": -100,
+        "bank": 4280
+      },
+      {
+        "race": 37,
+        "roi": -100,
+        "bank": 4260
+      },
+      {
+        "race": 38,
+        "roi": -100,
+        "bank": 4240
+      },
+      {
+        "race": 39,
+        "roi": -100,
+        "bank": 4220
+      },
+      {
+        "race": 40,
+        "roi": -100,
+        "bank": 4200
+      },
+      {
+        "race": 41,
+        "roi": -100,
+        "bank": 4180
+      },
+      {
+        "race": 42,
+        "roi": -100,
+        "bank": 4160
+      },
+      {
+        "race": 43,
+        "roi": -100,
+        "bank": 4140
+      },
+      {
+        "race": 44,
+        "roi": -100,
+        "bank": 4120
+      },
+      {
+        "race": 45,
+        "roi": -100,
+        "bank": 4100
+      },
+      {
+        "race": 46,
+        "roi": -100,
+        "bank": 4080
+      },
+      {
+        "race": 47,
+        "roi": -100,
+        "bank": 4060
+      },
+      {
+        "race": 48,
+        "roi": -100,
+        "bank": 4040
+      },
+      {
+        "race": 49,
+        "roi": -100,
+        "bank": 4020
+      },
+      {
+        "race": 50,
+        "roi": -100,
+        "bank": 4000
+      },
+      {
+        "race": 51,
+        "roi": -100,
+        "bank": 3980
+      },
+      {
+        "race": 52,
+        "roi": -100,
+        "bank": 3960
+      },
+      {
+        "race": 53,
+        "roi": -100,
+        "bank": 3940
+      },
+      {
+        "race": 54,
+        "roi": -100,
+        "bank": 3920
+      },
+      {
+        "race": 55,
+        "roi": -100,
+        "bank": 3900
+      },
+      {
+        "race": 56,
+        "roi": -100,
+        "bank": 3880
+      },
+      {
+        "race": 57,
+        "roi": -100,
+        "bank": 3860
+      },
+      {
+        "race": 58,
+        "roi": -100,
+        "bank": 3840
+      },
+      {
+        "race": 59,
+        "roi": -100,
+        "bank": 3820
+      },
+      {
+        "race": 60,
+        "roi": -100,
+        "bank": 3800
+      },
+      {
+        "race": 61,
+        "roi": -100,
+        "bank": 3780
+      },
+      {
+        "race": 62,
+        "roi": -100,
+        "bank": 3760
+      },
+      {
+        "race": 63,
+        "roi": -100,
+        "bank": 3740
+      },
+      {
+        "race": 64,
+        "roi": -100,
+        "bank": 3720
+      },
+      {
+        "race": 65,
+        "roi": -100,
+        "bank": 3700
+      },
+      {
+        "race": 66,
+        "roi": -100,
+        "bank": 3680
+      },
+      {
+        "race": 67,
+        "roi": -100,
+        "bank": 3660
+      },
+      {
+        "race": 68,
+        "roi": -100,
+        "bank": 3640
+      },
+      {
+        "race": 69,
+        "roi": -100,
+        "bank": 3620
+      },
+      {
+        "race": 70,
+        "roi": -100,
+        "bank": 3600
+      },
+      {
+        "race": 71,
+        "roi": -100,
+        "bank": 3580
+      },
+      {
+        "race": 72,
+        "roi": -100,
+        "bank": 3560
+      },
+      {
+        "race": 73,
+        "roi": -100,
+        "bank": 3540
+      },
+      {
+        "race": 74,
+        "roi": -100,
+        "bank": 3520
+      },
+      {
+        "race": 75,
+        "roi": -100,
+        "bank": 3500
+      },
+      {
+        "race": 76,
+        "roi": -100,
+        "bank": 3480
+      },
+      {
+        "race": 77,
+        "roi": -100,
+        "bank": 3460
+      },
+      {
+        "race": 78,
+        "roi": -100,
+        "bank": 3440
+      },
+      {
+        "race": 79,
+        "roi": -100,
+        "bank": 3420
+      },
+      {
+        "race": 80,
+        "roi": -100,
+        "bank": 3400
+      },
+      {
+        "race": 81,
+        "roi": -100,
+        "bank": 3380
+      },
+      {
+        "race": 82,
+        "roi": -100,
+        "bank": 3360
+      },
+      {
+        "race": 83,
+        "roi": -100,
+        "bank": 3340
+      },
+      {
+        "race": 84,
+        "roi": -100,
+        "bank": 3320
+      },
+      {
+        "race": 85,
+        "roi": -100,
+        "bank": 3300
+      },
+      {
+        "race": 86,
+        "roi": -100,
+        "bank": 3280
+      },
+      {
+        "race": 87,
+        "roi": -100,
+        "bank": 3260
+      },
+      {
+        "race": 88,
+        "roi": -100,
+        "bank": 3240
+      },
+      {
+        "race": 89,
+        "roi": -100,
+        "bank": 3220
+      },
+      {
+        "race": 90,
+        "roi": -100,
+        "bank": 3200
+      },
+      {
+        "race": 91,
+        "roi": -100,
+        "bank": 3180
+      },
+      {
+        "race": 92,
+        "roi": -100,
+        "bank": 3160
+      },
+      {
+        "race": 93,
+        "roi": -100,
+        "bank": 3140
+      },
+      {
+        "race": 94,
+        "roi": -100,
+        "bank": 3120
+      },
+      {
+        "race": 95,
+        "roi": -100,
+        "bank": 3100
+      },
+      {
+        "race": 96,
+        "roi": -100,
+        "bank": 3050
+      },
+      {
+        "race": 97,
+        "roi": -100,
+        "bank": 3030
+      },
+      {
+        "race": 98,
+        "roi": -100,
+        "bank": 3010
+      },
+      {
+        "race": 99,
+        "roi": -100,
+        "bank": 2990
+      },
+      {
+        "race": 100,
+        "roi": -100,
+        "bank": 2970
+      },
+      {
+        "race": 101,
+        "roi": -100,
+        "bank": 2950
+      },
+      {
+        "race": 102,
+        "roi": -100,
+        "bank": 2930
+      },
+      {
+        "race": 103,
+        "roi": -100,
+        "bank": 2910
+      },
+      {
+        "race": 104,
+        "roi": -100,
+        "bank": 2890
+      },
+      {
+        "race": 105,
+        "roi": -100,
+        "bank": 2870
+      },
+      {
+        "race": 106,
+        "roi": -100,
+        "bank": 2850
+      },
+      {
+        "race": 107,
+        "roi": -100,
+        "bank": 2830
+      },
+      {
+        "race": 108,
+        "roi": -100,
+        "bank": 2810
+      },
+      {
+        "race": 109,
+        "roi": -100,
+        "bank": 2790
+      },
+      {
+        "race": 110,
+        "roi": -100,
+        "bank": 2770
+      },
+      {
+        "race": 111,
+        "roi": -100,
+        "bank": 2750
+      },
+      {
+        "race": 112,
+        "roi": -100,
+        "bank": 2730
+      },
+      {
+        "race": 113,
+        "roi": -100,
+        "bank": 2710
+      },
+      {
+        "race": 114,
+        "roi": -100,
+        "bank": 2690
+      },
+      {
+        "race": 115,
+        "roi": -100,
+        "bank": 2670
+      },
+      {
+        "race": 116,
+        "roi": -100,
+        "bank": 2650
+      },
+      {
+        "race": 117,
+        "roi": -100,
+        "bank": 2630
+      },
+      {
+        "race": 118,
+        "roi": -100,
+        "bank": 2610
+      },
+      {
+        "race": 119,
+        "roi": -100,
+        "bank": 2590
+      },
+      {
+        "race": 120,
+        "roi": -100,
+        "bank": 2570
+      },
+      {
+        "race": 121,
+        "roi": -100,
+        "bank": 2550
+      },
+      {
+        "race": 122,
+        "roi": -100,
+        "bank": 2515
+      },
+      {
+        "race": 123,
+        "roi": -100,
+        "bank": 2490
+      },
+      {
+        "race": 124,
+        "roi": -100,
+        "bank": 2470
+      },
+      {
+        "race": 125,
+        "roi": -100,
+        "bank": 2450
+      },
+      {
+        "race": 126,
+        "roi": -100,
+        "bank": 2430
+      },
+      {
+        "race": 127,
+        "roi": -100,
+        "bank": 2410
+      },
+      {
+        "race": 128,
+        "roi": -100,
+        "bank": 2390
+      },
+      {
+        "race": 129,
+        "roi": -100,
+        "bank": 2370
+      },
+      {
+        "race": 130,
+        "roi": -100,
+        "bank": 2350
+      },
+      {
+        "race": 131,
+        "roi": -100,
+        "bank": 2330
+      },
+      {
+        "race": 132,
+        "roi": -100,
+        "bank": 2310
+      },
+      {
+        "race": 133,
+        "roi": -100,
+        "bank": 2290
+      },
+      {
+        "race": 134,
+        "roi": -100,
+        "bank": 2270
+      },
+      {
+        "race": 135,
+        "roi": -100,
+        "bank": 2250
+      },
+      {
+        "race": 136,
+        "roi": -100,
+        "bank": 2230
+      },
+      {
+        "race": 137,
+        "roi": -100,
+        "bank": 2210
+      },
+      {
+        "race": 138,
+        "roi": -100,
+        "bank": 2190
+      },
+      {
+        "race": 139,
+        "roi": -100,
+        "bank": 2170
+      },
+      {
+        "race": 140,
+        "roi": -100,
+        "bank": 2150
+      },
+      {
+        "race": 141,
+        "roi": -100,
+        "bank": 2130
+      },
+      {
+        "race": 142,
+        "roi": -100,
+        "bank": 2110
+      },
+      {
+        "race": 143,
+        "roi": -100,
+        "bank": 2090
+      },
+      {
+        "race": 144,
+        "roi": -100,
+        "bank": 2070
+      },
+      {
+        "race": 145,
+        "roi": -100,
+        "bank": 2050
+      },
+      {
+        "race": 146,
+        "roi": -100,
+        "bank": 2030
+      },
+      {
+        "race": 147,
+        "roi": -100,
+        "bank": 2010
+      },
+      {
+        "race": 148,
+        "roi": -100,
+        "bank": 1990
+      },
+      {
+        "race": 149,
+        "roi": -100,
+        "bank": 1970
+      },
+      {
+        "race": 150,
+        "roi": -100,
+        "bank": 1950
+      },
+      {
+        "race": 151,
+        "roi": -100,
+        "bank": 1930
+      },
+      {
+        "race": 152,
+        "roi": -100,
+        "bank": 1910
+      },
+      {
+        "race": 153,
+        "roi": -100,
+        "bank": 1890
+      },
+      {
+        "race": 154,
+        "roi": -100,
+        "bank": 1850
+      },
+      {
+        "race": 155,
+        "roi": -100,
+        "bank": 1815
+      },
+      {
+        "race": 156,
+        "roi": -100,
+        "bank": 1790
+      },
+      {
+        "race": 157,
+        "roi": -100,
+        "bank": 1770
+      },
+      {
+        "race": 158,
+        "roi": -100,
+        "bank": 1750
+      },
+      {
+        "race": 159,
+        "roi": -100,
+        "bank": 1710
+      },
+      {
+        "race": 160,
+        "roi": -100,
+        "bank": 1660
+      },
+      {
+        "race": 161,
+        "roi": -98,
+        "bank": 1697
+      },
+      {
+        "race": 162,
+        "roi": -94,
+        "bank": 1789
+      },
+      {
+        "race": 163,
+        "roi": -93,
+        "bank": 1806.81
+      },
+      {
+        "race": 164,
+        "roi": -91,
+        "bank": 1823.69
+      },
+      {
+        "race": 165,
+        "roi": -90,
+        "bank": 1833.3200000000002
+      },
+      {
+        "race": 166,
+        "roi": -89,
+        "bank": 1840.5700000000002
+      },
+      {
+        "race": 167,
+        "roi": -89,
+        "bank": 1820.5700000000002
+      },
+      {
+        "race": 168,
+        "roi": -90,
+        "bank": 1780.5700000000002
+      },
+      {
+        "race": 169,
+        "roi": -90,
+        "bank": 1755.5700000000002
+      },
+      {
+        "race": 170,
+        "roi": -89,
+        "bank": 1767.42
+      },
+      {
+        "race": 171,
+        "roi": -87,
+        "bank": 1791.0500000000002
+      },
+      {
+        "race": 172,
+        "roi": -86,
+        "bank": 1802.0500000000002
+      },
+      {
+        "race": 173,
+        "roi": -86,
+        "bank": 1772.0500000000002
+      }
+    ]
+  }
+}

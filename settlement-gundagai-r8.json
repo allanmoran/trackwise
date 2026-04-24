@@ -1,0 +1,52 @@
+[
+  {
+    "horse": "Rubi Air",
+    "track": "Gundagai",
+    "race": 8,
+    "betType": "PLACE",
+    "barrier": 9,
+    "finishPosition": null,
+    "result": "LOSS",
+    "details": "Barrier results not found for Gundagai R8"
+  },
+  {
+    "horse": "Jannik",
+    "track": "Gundagai",
+    "race": 8,
+    "betType": "WIN",
+    "barrier": 17,
+    "finishPosition": null,
+    "result": "LOSS",
+    "details": "Barrier results not found for Gundagai R8"
+  },
+  {
+    "horse": "A Book Of Days",
+    "track": "Gundagai",
+    "race": 8,
+    "betType": "PLACE",
+    "barrier": 16,
+    "finishPosition": null,
+    "result": "LOSS",
+    "details": "Barrier results not found for Gundagai R8"
+  },
+  {
+    "horse": "Spirits Burn Deep",
+    "track": "Gundagai",
+    "race": 8,
+    "betType": "WIN",
+    "barrier": 11,
+    "finishPosition": null,
+    "result": "LOSS",
+    "details": "Barrier results not found for Gundagai R8"
+  },
+  {
+    "horse": "Ace Of Lace",
+    "track": "Gundagai",
+    "race": 8,
+    "betType": "PLACE",
+    "barrier": 12,
+    "finishPosition": null,
+    "result": "LOSS",
+    "details": "Barrier results not found for Gundagai R8"
+  }
+]

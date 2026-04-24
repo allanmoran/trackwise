@@ -1,0 +1,1638 @@
+{
+  "generated": "2026-04-16T02:46:43.476Z",
+  "overview": {
+    "totalHorses": 17088,
+    "totalRaces": 49,
+    "totalBets": 173,
+    "totalWins": 2,
+    "totalPlaces": 7,
+    "overallWinRate": 1,
+    "overallROI": -86
+  },
+  "topHorses": [
+    {
+      "name": "Valley Prince",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 1,
+      "places": 0,
+      "strikeRate": 100,
+      "placeRate": 100,
+      "formScore": 100,
+      "avgOdds": 3.3,
+      "roi": 230
+    },
+    {
+      "name": "Venting",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 1,
+      "places": 0,
+      "strikeRate": 100,
+      "placeRate": 100,
+      "formScore": 100,
+      "avgOdds": 2.48,
+      "roi": 148
+    },
+    {
+      "name": "Choice Witness",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 60,
+      "roi": -0.038722031637858305
+    },
+    {
+      "name": "Cyclone Rupert",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 5,
+      "roi": -0.1626245653954062
+    },
+    {
+      "name": "Atmospheric Rock",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 6.4,
+      "roi": -0.26611543861736286
+    },
+    {
+      "name": "Soul Lady",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 9.95,
+      "roi": -0.2601965133440604
+    },
+    {
+      "name": "Clifton Springs",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 30,
+      "roi": -0.11689507527049349
+    },
+    {
+      "name": "Wal's Angels",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 7.94,
+      "roi": -0.057058731782860035
+    },
+    {
+      "name": "Caravanserai",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 5.4,
+      "roi": -0.00527041504219153
+    },
+    {
+      "name": "Pretty Penguin",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 101.07,
+      "roi": -0.031982413866890075
+    },
+    {
+      "name": "Heavenly Kiss",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 16.25,
+      "roi": 0.037179375381358425
+    },
+    {
+      "name": "Wonder Step",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 5,
+      "roi": -0.09107109138609296
+    },
+    {
+      "name": "Jackpot Star",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 14.47,
+      "roi": -0.025229032299583114
+    },
+    {
+      "name": "Spurline",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 16.31,
+      "roi": -0.05721954605470863
+    },
+    {
+      "name": "Molteuno",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 4.475,
+      "roi": -0.20159986248563758
+    },
+    {
+      "name": "Stellar Legend",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 1,
+      "strikeRate": 0,
+      "placeRate": 100,
+      "formScore": 40,
+      "avgOdds": 2.58,
+      "roi": 39
+    },
+    {
+      "name": "Merchant Flyer",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 1,
+      "strikeRate": 0,
+      "placeRate": 100,
+      "formScore": 40,
+      "avgOdds": 2.76,
+      "roi": 44
+    },
+    {
+      "name": "Arancia",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 1,
+      "strikeRate": 0,
+      "placeRate": 100,
+      "formScore": 40,
+      "avgOdds": 4.15,
+      "roi": 79
+    },
+    {
+      "name": "Stella Bystarlight",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 1,
+      "strikeRate": 0,
+      "placeRate": 100,
+      "formScore": 40,
+      "avgOdds": 2.59,
+      "roi": 24
+    },
+    {
+      "name": "Flying Yishu",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 1,
+      "strikeRate": 0,
+      "placeRate": 100,
+      "formScore": 40,
+      "avgOdds": 2.35,
+      "roi": 34
+    },
+    {
+      "name": "Arrogant Miss",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 1,
+      "strikeRate": 0,
+      "placeRate": 100,
+      "formScore": 40,
+      "avgOdds": 3.85,
+      "roi": 71
+    },
+    {
+      "name": "Bon'S A Lad",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 1,
+      "strikeRate": 0,
+      "placeRate": 100,
+      "formScore": 40,
+      "avgOdds": 2.54,
+      "roi": 39
+    },
+    {
+      "name": "Rubi Air",
+      "totalRaces": 33,
+      "bets": 30,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": null,
+      "roi": -100
+    },
+    {
+      "name": "Spirits Burn Deep",
+      "totalRaces": 33,
+      "bets": 30,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": null,
+      "roi": -100
+    },
+    {
+      "name": "Ace Of Lace",
+      "totalRaces": 33,
+      "bets": 30,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": null,
+      "roi": -100
+    },
+    {
+      "name": "A Book Of Days",
+      "totalRaces": 33,
+      "bets": 30,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": null,
+      "roi": -100
+    },
+    {
+      "name": "Jannik",
+      "totalRaces": 33,
+      "bets": 30,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": null,
+      "roi": -100
+    },
+    {
+      "name": "Flying Start",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 3.15,
+      "roi": -100
+    },
+    {
+      "name": "Moke Lake",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 2.15,
+      "roi": -100
+    },
+    {
+      "name": "Rebelious Red",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 2.93,
+      "roi": -100
+    },
+    {
+      "name": "Unravel",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 2.82,
+      "roi": -100
+    },
+    {
+      "name": "Chapados",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 4.66,
+      "roi": -100
+    },
+    {
+      "name": "Grinzinger Lass",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 4.78,
+      "roi": -100
+    },
+    {
+      "name": "Simply Sonnet",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 4.03,
+      "roi": -100
+    },
+    {
+      "name": "Oscar Booie",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 3.06,
+      "roi": -100
+    },
+    {
+      "name": "Boyd",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 2.01,
+      "roi": -100
+    },
+    {
+      "name": "Super Sharp",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 2.37,
+      "roi": -100
+    },
+    {
+      "name": "Mahoney'S Machine",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 2.78,
+      "roi": -100
+    },
+    {
+      "name": "Camilla'S Knickers",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 3.04,
+      "roi": -100
+    },
+    {
+      "name": "Mud 'N' Blood",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 4.2,
+      "roi": -100
+    },
+    {
+      "name": "Amedei",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 4.78,
+      "roi": -100
+    }
+  ],
+  "topTracks": [
+    {
+      "name": "Ascot",
+      "races": 9,
+      "runners": 162,
+      "bets": 45,
+      "winRate": 0,
+      "roi": -100
+    },
+    {
+      "name": "Alice Springs",
+      "races": 14,
+      "runners": 144,
+      "bets": 44,
+      "winRate": 5,
+      "roi": -62
+    },
+    {
+      "name": "Ballina",
+      "races": 6,
+      "runners": 126,
+      "bets": 31,
+      "winRate": 0,
+      "roi": -100
+    },
+    {
+      "name": "Bowen",
+      "races": 6,
+      "runners": 90,
+      "bets": 27,
+      "winRate": 0,
+      "roi": -83
+    },
+    {
+      "name": "Caulfield",
+      "races": 4,
+      "runners": 54,
+      "bets": 12,
+      "winRate": 0,
+      "roi": -87
+    },
+    {
+      "name": "Geraldton",
+      "races": 2,
+      "runners": 18,
+      "bets": 6,
+      "winRate": 0,
+      "roi": -100
+    },
+    {
+      "name": "Hawkesbury",
+      "races": 2,
+      "runners": 0,
+      "bets": 2,
+      "winRate": 0,
+      "roi": -100
+    },
+    {
+      "name": "Donald",
+      "races": 1,
+      "runners": 0,
+      "bets": 1,
+      "winRate": 0,
+      "roi": -100
+    },
+    {
+      "name": "Longreach",
+      "races": 1,
+      "runners": 0,
+      "bets": 1,
+      "winRate": 0,
+      "roi": -100
+    },
+    {
+      "name": "Sapphire Coast",
+      "races": 1,
+      "runners": 0,
+      "bets": 1,
+      "winRate": 0,
+      "roi": -100
+    },
+    {
+      "name": "Scone",
+      "races": 1,
+      "runners": 0,
+      "bets": 1,
+      "winRate": 0,
+      "roi": -100
+    },
+    {
+      "name": "Seymour",
+      "races": 1,
+      "runners": 0,
+      "bets": 1,
+      "winRate": 0,
+      "roi": -100
+    },
+    {
+      "name": "Townsville",
+      "races": 1,
+      "runners": 0,
+      "bets": 1,
+      "winRate": 0,
+      "roi": -100
+    }
+  ],
+  "horseTrackAffinities": [
+    {
+      "horse": "Venting",
+      "track": "Alice Springs",
+      "bets": 1,
+      "wins": 1,
+      "places": 0,
+      "winRate": 100
+    },
+    {
+      "horse": "Valley Prince",
+      "track": "Alice Springs",
+      "bets": 1,
+      "wins": 1,
+      "places": 0,
+      "winRate": 100
+    },
+    {
+      "horse": "Jannik",
+      "track": "Ascot",
+      "bets": 9,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "A Book Of Days",
+      "track": "Ascot",
+      "bets": 9,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Ace Of Lace",
+      "track": "Ascot",
+      "bets": 9,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Spirits Burn Deep",
+      "track": "Ascot",
+      "bets": 9,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Rubi Air",
+      "track": "Ascot",
+      "bets": 9,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Jannik",
+      "track": "Alice Springs",
+      "bets": 7,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "A Book Of Days",
+      "track": "Alice Springs",
+      "bets": 7,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Ace Of Lace",
+      "track": "Alice Springs",
+      "bets": 7,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Spirits Burn Deep",
+      "track": "Alice Springs",
+      "bets": 7,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Rubi Air",
+      "track": "Alice Springs",
+      "bets": 7,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Jannik",
+      "track": "Ballina",
+      "bets": 6,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "A Book Of Days",
+      "track": "Ballina",
+      "bets": 6,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Ace Of Lace",
+      "track": "Ballina",
+      "bets": 6,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Spirits Burn Deep",
+      "track": "Ballina",
+      "bets": 6,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Rubi Air",
+      "track": "Ballina",
+      "bets": 6,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Jannik",
+      "track": "Bowen",
+      "bets": 5,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "A Book Of Days",
+      "track": "Bowen",
+      "bets": 5,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Ace Of Lace",
+      "track": "Bowen",
+      "bets": 5,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Spirits Burn Deep",
+      "track": "Bowen",
+      "bets": 5,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Rubi Air",
+      "track": "Bowen",
+      "bets": 5,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Jannik",
+      "track": "Caulfield",
+      "bets": 2,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "A Book Of Days",
+      "track": "Caulfield",
+      "bets": 2,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Ace Of Lace",
+      "track": "Caulfield",
+      "bets": 2,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Spirits Burn Deep",
+      "track": "Caulfield",
+      "bets": 2,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Rubi Air",
+      "track": "Caulfield",
+      "bets": 2,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Amedei",
+      "track": "Donald",
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Mud 'N' Blood",
+      "track": "Ballina",
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Camilla'S Knickers",
+      "track": "Hawkesbury",
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Mahoney'S Machine",
+      "track": "Geraldton",
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Bon'S A Lad",
+      "track": "Alice Springs",
+      "bets": 1,
+      "wins": 0,
+      "places": 1,
+      "winRate": 0
+    },
+    {
+      "horse": "Super Sharp",
+      "track": "Alice Springs",
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Arrogant Miss",
+      "track": "Alice Springs",
+      "bets": 1,
+      "wins": 0,
+      "places": 1,
+      "winRate": 0
+    },
+    {
+      "horse": "Boyd",
+      "track": "Seymour",
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Oscar Booie",
+      "track": "Townsville",
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Simply Sonnet",
+      "track": "Hawkesbury",
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Grinzinger Lass",
+      "track": "Alice Springs",
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Flying Yishu",
+      "track": "Alice Springs",
+      "bets": 1,
+      "wins": 0,
+      "places": 1,
+      "winRate": 0
+    },
+    {
+      "horse": "Stella Bystarlight",
+      "track": "Alice Springs",
+      "bets": 1,
+      "wins": 0,
+      "places": 1,
+      "winRate": 0
+    },
+    {
+      "horse": "Chapados",
+      "track": "Caulfield",
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Arancia",
+      "track": "Bowen",
+      "bets": 1,
+      "wins": 0,
+      "places": 1,
+      "winRate": 0
+    },
+    {
+      "horse": "Unravel",
+      "track": "Sapphire Coast",
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Rebelious Red",
+      "track": "Longreach",
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Moke Lake",
+      "track": "Scone",
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Merchant Flyer",
+      "track": "Caulfield",
+      "bets": 1,
+      "wins": 0,
+      "places": 1,
+      "winRate": 0
+    },
+    {
+      "horse": "Flying Start",
+      "track": "Alice Springs",
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Stellar Legend",
+      "track": "Bowen",
+      "bets": 1,
+      "wins": 0,
+      "places": 1,
+      "winRate": 0
+    },
+    {
+      "horse": "Jannik",
+      "track": "Geraldton",
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "A Book Of Days",
+      "track": "Geraldton",
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Ace Of Lace",
+      "track": "Geraldton",
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Spirits Burn Deep",
+      "track": "Geraldton",
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    },
+    {
+      "horse": "Rubi Air",
+      "track": "Geraldton",
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "winRate": 0
+    }
+  ],
+  "horseProfiles": {
+    "Valley Prince": {
+      "name": "Valley Prince",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 1,
+      "places": 0,
+      "strikeRate": 100,
+      "placeRate": 100,
+      "formScore": 100,
+      "avgOdds": 3.3,
+      "roi": 230
+    },
+    "Venting": {
+      "name": "Venting",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 1,
+      "places": 0,
+      "strikeRate": 100,
+      "placeRate": 100,
+      "formScore": 100,
+      "avgOdds": 2.48,
+      "roi": 148
+    },
+    "Choice Witness": {
+      "name": "Choice Witness",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 60,
+      "roi": -0.038722031637858305
+    },
+    "Cyclone Rupert": {
+      "name": "Cyclone Rupert",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 5,
+      "roi": -0.1626245653954062
+    },
+    "Atmospheric Rock": {
+      "name": "Atmospheric Rock",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 6.4,
+      "roi": -0.26611543861736286
+    },
+    "Soul Lady": {
+      "name": "Soul Lady",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 9.95,
+      "roi": -0.2601965133440604
+    },
+    "Clifton Springs": {
+      "name": "Clifton Springs",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 30,
+      "roi": -0.11689507527049349
+    },
+    "Wal's Angels": {
+      "name": "Wal's Angels",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 7.94,
+      "roi": -0.057058731782860035
+    },
+    "Caravanserai": {
+      "name": "Caravanserai",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 5.4,
+      "roi": -0.00527041504219153
+    },
+    "Pretty Penguin": {
+      "name": "Pretty Penguin",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 101.07,
+      "roi": -0.031982413866890075
+    },
+    "Heavenly Kiss": {
+      "name": "Heavenly Kiss",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 16.25,
+      "roi": 0.037179375381358425
+    },
+    "Wonder Step": {
+      "name": "Wonder Step",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 5,
+      "roi": -0.09107109138609296
+    },
+    "Jackpot Star": {
+      "name": "Jackpot Star",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 14.47,
+      "roi": -0.025229032299583114
+    },
+    "Spurline": {
+      "name": "Spurline",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 16.31,
+      "roi": -0.05721954605470863
+    },
+    "Molteuno": {
+      "name": "Molteuno",
+      "totalRaces": 33,
+      "bets": 0,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": null,
+      "placeRate": null,
+      "formScore": 100,
+      "avgOdds": 4.475,
+      "roi": -0.20159986248563758
+    },
+    "Stellar Legend": {
+      "name": "Stellar Legend",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 1,
+      "strikeRate": 0,
+      "placeRate": 100,
+      "formScore": 40,
+      "avgOdds": 2.58,
+      "roi": 39
+    },
+    "Merchant Flyer": {
+      "name": "Merchant Flyer",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 1,
+      "strikeRate": 0,
+      "placeRate": 100,
+      "formScore": 40,
+      "avgOdds": 2.76,
+      "roi": 44
+    },
+    "Arancia": {
+      "name": "Arancia",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 1,
+      "strikeRate": 0,
+      "placeRate": 100,
+      "formScore": 40,
+      "avgOdds": 4.15,
+      "roi": 79
+    },
+    "Stella Bystarlight": {
+      "name": "Stella Bystarlight",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 1,
+      "strikeRate": 0,
+      "placeRate": 100,
+      "formScore": 40,
+      "avgOdds": 2.59,
+      "roi": 24
+    },
+    "Flying Yishu": {
+      "name": "Flying Yishu",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 1,
+      "strikeRate": 0,
+      "placeRate": 100,
+      "formScore": 40,
+      "avgOdds": 2.35,
+      "roi": 34
+    },
+    "Arrogant Miss": {
+      "name": "Arrogant Miss",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 1,
+      "strikeRate": 0,
+      "placeRate": 100,
+      "formScore": 40,
+      "avgOdds": 3.85,
+      "roi": 71
+    },
+    "Bon'S A Lad": {
+      "name": "Bon'S A Lad",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 1,
+      "strikeRate": 0,
+      "placeRate": 100,
+      "formScore": 40,
+      "avgOdds": 2.54,
+      "roi": 39
+    },
+    "Rubi Air": {
+      "name": "Rubi Air",
+      "totalRaces": 33,
+      "bets": 30,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": null,
+      "roi": -100
+    },
+    "Spirits Burn Deep": {
+      "name": "Spirits Burn Deep",
+      "totalRaces": 33,
+      "bets": 30,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": null,
+      "roi": -100
+    },
+    "Ace Of Lace": {
+      "name": "Ace Of Lace",
+      "totalRaces": 33,
+      "bets": 30,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": null,
+      "roi": -100
+    },
+    "A Book Of Days": {
+      "name": "A Book Of Days",
+      "totalRaces": 33,
+      "bets": 30,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": null,
+      "roi": -100
+    },
+    "Jannik": {
+      "name": "Jannik",
+      "totalRaces": 33,
+      "bets": 30,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": null,
+      "roi": -100
+    },
+    "Flying Start": {
+      "name": "Flying Start",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 3.15,
+      "roi": -100
+    },
+    "Moke Lake": {
+      "name": "Moke Lake",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 2.15,
+      "roi": -100
+    },
+    "Rebelious Red": {
+      "name": "Rebelious Red",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 2.93,
+      "roi": -100
+    },
+    "Unravel": {
+      "name": "Unravel",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 2.82,
+      "roi": -100
+    },
+    "Chapados": {
+      "name": "Chapados",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 4.66,
+      "roi": -100
+    },
+    "Grinzinger Lass": {
+      "name": "Grinzinger Lass",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 4.78,
+      "roi": -100
+    },
+    "Simply Sonnet": {
+      "name": "Simply Sonnet",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 4.03,
+      "roi": -100
+    },
+    "Oscar Booie": {
+      "name": "Oscar Booie",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 3.06,
+      "roi": -100
+    },
+    "Boyd": {
+      "name": "Boyd",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 2.01,
+      "roi": -100
+    },
+    "Super Sharp": {
+      "name": "Super Sharp",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 2.37,
+      "roi": -100
+    },
+    "Mahoney'S Machine": {
+      "name": "Mahoney'S Machine",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 2.78,
+      "roi": -100
+    },
+    "Camilla'S Knickers": {
+      "name": "Camilla'S Knickers",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 3.04,
+      "roi": -100
+    },
+    "Mud 'N' Blood": {
+      "name": "Mud 'N' Blood",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 4.2,
+      "roi": -100
+    },
+    "Amedei": {
+      "name": "Amedei",
+      "totalRaces": 0,
+      "bets": 1,
+      "wins": 0,
+      "places": 0,
+      "strikeRate": 0,
+      "placeRate": 0,
+      "formScore": 0,
+      "avgOdds": 4.78,
+      "roi": -100
+    }
+  },
+  "trackProfiles": {
+    "Ascot": {
+      "name": "Ascot",
+      "races": 9,
+      "runners": 162,
+      "bets": 45,
+      "winRate": 0,
+      "roi": -100
+    },
+    "Alice Springs": {
+      "name": "Alice Springs",
+      "races": 14,
+      "runners": 144,
+      "bets": 44,
+      "winRate": 5,
+      "roi": -62
+    },
+    "Ballina": {
+      "name": "Ballina",
+      "races": 6,
+      "runners": 126,
+      "bets": 31,
+      "winRate": 0,
+      "roi": -100
+    },
+    "Bowen": {
+      "name": "Bowen",
+      "races": 6,
+      "runners": 90,
+      "bets": 27,
+      "winRate": 0,
+      "roi": -83
+    },
+    "Caulfield": {
+      "name": "Caulfield",
+      "races": 4,
+      "runners": 54,
+      "bets": 12,
+      "winRate": 0,
+      "roi": -87
+    },
+    "Geraldton": {
+      "name": "Geraldton",
+      "races": 2,
+      "runners": 18,
+      "bets": 6,
+      "winRate": 0,
+      "roi": -100
+    },
+    "Hawkesbury": {
+      "name": "Hawkesbury",
+      "races": 2,
+      "runners": 0,
+      "bets": 2,
+      "winRate": 0,
+      "roi": -100
+    },
+    "Donald": {
+      "name": "Donald",
+      "races": 1,
+      "runners": 0,
+      "bets": 1,
+      "winRate": 0,
+      "roi": -100
+    },
+    "Longreach": {
+      "name": "Longreach",
+      "races": 1,
+      "runners": 0,
+      "bets": 1,
+      "winRate": 0,
+      "roi": -100
+    },
+    "Sapphire Coast": {
+      "name": "Sapphire Coast",
+      "races": 1,
+      "runners": 0,
+      "bets": 1,
+      "winRate": 0,
+      "roi": -100
+    },
+    "Scone": {
+      "name": "Scone",
+      "races": 1,
+      "runners": 0,
+      "bets": 1,
+      "winRate": 0,
+      "roi": -100
+    },
+    "Seymour": {
+      "name": "Seymour",
+      "races": 1,
+      "runners": 0,
+      "bets": 1,
+      "winRate": 0,
+      "roi": -100
+    },
+    "Townsville": {
+      "name": "Townsville",
+      "races": 1,
+      "runners": 0,
+      "bets": 1,
+      "winRate": 0,
+      "roi": -100
+    }
+  }
+}
