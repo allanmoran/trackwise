@@ -422,14 +422,24 @@ export class SportsbetFormScraper {
         const raceOverviewIdx = pageText.indexOf('Race overview');
 
         // Known Australian racetracks for reliable track extraction
-        const knownTracks = ['Gundagai', 'Hobart', 'Kalgoorlie', 'Wellington', 'Rockhampton', 'Sunshine Coast', 'Swan Hill', 'Terang', 'Port Augusta', 'Cessnock', 'Nowra', 'Coffs Harbour', 'Grafton', 'Port Macquarie', 'Tamworth', 'Armidale', 'Bathurst', 'Orange', 'Wagga Wagga', 'Albury', 'Bendigo', 'Ballarat', 'Geelong', 'Williamstown', 'Moonee Valley', 'Caulfield', 'Sandown', 'Flemington', 'Yarra Valley', 'Colac', 'Wodonga', 'Echuca', 'Seymour', 'Healesville', 'Sale', 'Warragul', 'Ararat', 'Hamilton', 'Casterton', 'Mildura', 'Wangaratta', 'Shepparton', 'Kilmore', 'Kyneton', 'Taree', 'Naracoorte', 'Warwick', 'Ipswich', 'Doomben', 'Mornington', 'Pakenham', 'Werribee', 'Castlemaine', 'Benalla', 'Goulburn', 'Maroubra', 'Darwin', 'Mary', 'Ballina', 'Toowoomba', 'Alice Springs', 'Ascot', 'Narrogin', 'Newcastle', 'Bowen'];
+        const knownTracks = ['Gundagai', 'Hobart', 'Kalgoorlie', 'Wellington', 'Rockhampton', 'Sunshine Coast', 'Swan Hill', 'Terang', 'Port Augusta', 'Cessnock', 'Nowra', 'Coffs Harbour', 'Grafton', 'Port Macquarie', 'Tamworth', 'Armidale', 'Bathurst', 'Orange', 'Wagga Wagga', 'Albury', 'Bendigo', 'Ballarat', 'Geelong', 'Williamstown', 'Moonee Valley', 'Caulfield', 'Sandown', 'Flemington', 'Yarra Valley', 'Colac', 'Wodonga', 'Echuca', 'Seymour', 'Healesville', 'Sale', 'Warragul', 'Ararat', 'Hamilton', 'Casterton', 'Mildura', 'Wangaratta', 'Shepparton', 'Kilmore', 'Kyneton', 'Taree', 'Naracoorte', 'Warwick', 'Ipswich', 'Doomben', 'Mornington', 'Pakenham', 'Werribee', 'Castlemaine', 'Benalla', 'Goulburn', 'Maroubra', 'Darwin', 'Mary', 'Ballina', 'Toowoomba', 'Alice Springs', 'Ascot', 'Narrogin', 'Newcastle', 'Bowen', 'Cranbourne', 'Eagle Farm', 'Beaudesert', 'Randwick', 'Gosford', 'Morphettville', 'Moe'];
         let detectedTrack = 'Unknown';
-        const pageTextUpper = pageText.toUpperCase();
+
+        // Find track by counting occurrences (first track with most mentions is the actual race)
+        let trackScores = {};
         for (const track of knownTracks) {
-          if (pageText.includes(track) || pageTextUpper.includes(track.toUpperCase())) {
-            detectedTrack = track;
-            break;
+          const regex = new RegExp(track, 'gi');
+          const matches = pageText.match(regex) || [];
+          if (matches.length > 0) {
+            trackScores[track] = matches.length;
           }
+        }
+
+        // Pick track with highest occurrence count (most likely the actual race)
+        if (Object.keys(trackScores).length > 0) {
+          detectedTrack = Object.keys(trackScores).reduce((a, b) =>
+            trackScores[a] > trackScores[b] ? a : b
+          );
         }
 
         // If no "Race overview" found, try fallback extraction methods
