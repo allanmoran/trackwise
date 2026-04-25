@@ -23,7 +23,7 @@ import {
   Tabs,
   Tab,
 } from '@mui/material';
-import { TrendingUpRounded, CheckCircleRounded, DownloadRounded, RefreshRounded } from '@mui/icons-material';
+import { TrendingUpRounded, CheckCircleRounded, RefreshRounded } from '@mui/icons-material';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { apiFetch, apiPost } from '@/lib/fetch';
 import { API_ENDPOINTS, API_BASE } from '@/config/api';
@@ -166,7 +166,7 @@ const DailyPicksComponent: React.FC = () => {
     }
   };
 
-  const loadTodayRaces = async () => {
+  const _loadTodayRaces = async () => {
     setLoading(true);
     setError('');
     setSuccess('');

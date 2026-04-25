@@ -1,5 +1,6 @@
-import { StrictMode, lazy, Suspense, useState } from 'react'
-import { createRoot, Root } from 'react-dom/client'
+import { StrictMode, lazy, Suspense } from 'react'
+import { createRoot } from 'react-dom/client'
+import type { Root } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { StyledEngineProvider } from '@mui/material/styles'
 import { ThemeProvider } from '@mui/material/styles'
