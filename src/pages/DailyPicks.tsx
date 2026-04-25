@@ -166,40 +166,6 @@ const DailyPicksComponent: React.FC = () => {
     }
   };
 
-  const _loadTodayRaces = async () => {
-    setLoading(true);
-    setError('');
-    setSuccess('');
-
-    try {
-      const response = await fetch(`${API_BASE}/api/results/load-todays-races`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        // Reload dashboard to get latest stats
-        await loadDashboard();
-
-        // Get latest dashboard stats for display
-        const dashData = await apiFetch<DashboardStats>(API_ENDPOINTS.dashboard);
-        const evPercent = Math.round(dashData.evValidationPercent || 0);
-        const message = `✓ ${dashData.totalBets} bets tracked | ${dashData.betsWithResult} results marked | EV validation: ${evPercent}% accurate`;
-        setSuccess(message);
-        // Don't auto-populate textarea - races are now in database
-      } else {
-        setError(`Failed to load races: ${data.error || 'Unknown error'}`);
-      }
-    } catch (err) {
-      const errorMsg = err instanceof Error ? err.message : String(err);
-      setError(`Error loading races: ${errorMsg}`);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const submitResults = async () => {
     setSubmittingResults(true);
     setError('');
