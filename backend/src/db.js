@@ -293,6 +293,45 @@ export function initializeDatabase() {
     )
   `);
 
+  // PHASE 2: Ensemble model weights
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS model_weights (
+      model_name TEXT NOT NULL PRIMARY KEY,
+      weight REAL NOT NULL DEFAULT 0.33,
+      accuracy_30d REAL,
+      updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    )
+  `);
+
+  // Initialize default ensemble weights
+  const weightsCheck = db.prepare('SELECT COUNT(*) as count FROM model_weights').get();
+  if (weightsCheck.count === 0) {
+    db.prepare('INSERT INTO model_weights (model_name, weight) VALUES (?, ?)').run('form', 0.45);
+    db.prepare('INSERT INTO model_weights (model_name, weight) VALUES (?, ?)').run('market', 0.35);
+    db.prepare('INSERT INTO model_weights (model_name, weight) VALUES (?, ?)').run('kb', 0.20);
+  }
+
+  // PHASE 2: Track-specific model profiles
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS track_model_profiles (
+      track TEXT NOT NULL PRIMARY KEY,
+      weights_json TEXT NOT NULL,
+      sample_count INTEGER DEFAULT 0,
+      last_updated DATETIME DEFAULT CURRENT_TIMESTAMP
+    )
+  `);
+
+  // PHASE 4: A/B testing assignments
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS ab_test_assignments (
+      bet_id INTEGER PRIMARY KEY,
+      variant TEXT NOT NULL,
+      ev_threshold REAL,
+      assigned_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY(bet_id) REFERENCES bets(id)
+    )
+  `);
+
   console.log('✅ Database initialized');
 }
 

@@ -283,6 +283,54 @@ export class ComplianceMonitor {
   }
 
   /**
+   * PHASE 4A: Drawdown Limit Gate
+   * Triggers betting pause if recent losses exceed 15% of current bankroll
+   */
+  static checkDrawdownLimit(rollingDays = 7) {
+    try {
+      const now = new Date();
+      const cutoffDate = new Date(now.getTime() - rollingDays * 24 * 60 * 60 * 1000);
+
+      // Get current bankroll
+      const bankrollResult = db.prepare(`
+        SELECT 1000 + COALESCE(SUM(profit_loss), 0) as current_bank
+        FROM bets
+        WHERE status LIKE 'SETTLED%'
+      `).get();
+      const currentBank = bankrollResult?.current_bank || 1000;
+
+      // Get rolling period P&L
+      const rollingPnL = db.prepare(`
+        SELECT COALESCE(SUM(profit_loss), 0) as total_pnl
+        FROM bets
+        WHERE status LIKE 'SETTLED%'
+        AND settled_at > datetime('now', '-' || ? || ' days')
+      `).get(rollingDays);
+
+      const periodLoss = Math.abs(Math.min(0, rollingPnL?.total_pnl || 0)); // Only count losses
+      const drawdownPercent = (periodLoss / currentBank) * 100;
+      const drawdownThreshold = 15; // 15% drawdown trigger
+      const triggered = drawdownPercent >= drawdownThreshold;
+
+      return {
+        triggered,
+        drawdownPercent: drawdownPercent.toFixed(1),
+        drawdownThreshold,
+        periodDays: rollingDays,
+        currentBank: currentBank.toFixed(2),
+        periodLoss: periodLoss.toFixed(2),
+        action: triggered ? 'PAUSE_BETTING' : 'CONTINUE',
+        message: triggered
+          ? `Drawdown exceeded ${drawdownThreshold}%: ${drawdownPercent.toFixed(1)}% loss in last ${rollingDays} days`
+          : `Drawdown within limits: ${drawdownPercent.toFixed(1)}% loss in last ${rollingDays} days`,
+        severity: triggered ? 'critical' : 'info'
+      };
+    } catch (err) {
+      return { triggered: false, error: err.message, severity: 'error' };
+    }
+  }
+
+  /**
    * Rule 9: Implement Error Handling
    * Check logging and monitoring infrastructure
    */

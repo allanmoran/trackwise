@@ -11,6 +11,7 @@
  */
 
 import db from '../db.js';
+import { ModelRetrainer } from './retrainer.js';
 
 export class RacePredictor {
   /**
@@ -89,6 +90,54 @@ export class RacePredictor {
   /**
    * Calculate barrier suitability for this horse at this track
    */
+  /**
+   * PHASE 1B: Odds movement signal
+   * Negative odds drift (price shortened) = market backing = positive signal
+   */
+  static getOddsMovementSignal(horseId, raceId) {
+    const runner = db.prepare(`
+      SELECT starting_odds, closing_odds
+      FROM race_runners
+      WHERE horse_id = ? AND race_id = ?
+    `).get(horseId, raceId);
+
+    if (!runner || !runner.starting_odds || !runner.closing_odds) return 0;
+
+    const drift = (runner.closing_odds - runner.starting_odds) / runner.starting_odds;
+    // Negative drift (odds shortened) is positive signal
+    // Contribution: ±8% based on drift magnitude
+    return Math.max(-0.08, Math.min(0.08, drift * -0.15));
+  }
+
+  /**
+   * PHASE 1D: Track-specific barrier bias
+   * Returns ±4% adjustment based on historical barrier performance at this track
+   */
+  static getTrackBarrierBias(raceId, barrier) {
+    const race = db.prepare('SELECT track, distance FROM races WHERE id = ?').get(raceId);
+    if (!race || !barrier) return 0;
+
+    const statKey = `${race.track}|${race.distance}|barrier_${barrier}`;
+    const kbData = db.prepare(`
+      SELECT value FROM kb_stats
+      WHERE stat_type = 'track_barrier' AND stat_key = ?
+    `).get(statKey);
+
+    if (!kbData || !kbData.value) return 0;
+
+    let barrierWinRate = 0;
+    try {
+      const parsed = JSON.parse(kbData.value);
+      barrierWinRate = parsed.win_rate || 0;
+    } catch (e) {
+      return 0;
+    }
+
+    const baseline = 0.15;
+    const adjustment = (barrierWinRate - baseline) / baseline;
+    return Math.max(-0.04, Math.min(0.04, adjustment * 0.04));
+  }
+
   static getBarrierAnalysis(horseId, raceId) {
     const race = db.prepare('SELECT track FROM races WHERE id = ?').get(raceId);
     if (!race) return { barrierSignal: 0, preference: null };
@@ -119,6 +168,37 @@ export class RacePredictor {
       winRate: barrierWinRate,
       races: barrierStats.races
     };
+  }
+
+  /**
+   * PHASE 1C: Weighted recent form vector (last 5 races with decay)
+   * Replaces simple trend calculation with weighted historical performance
+   */
+  static getWeightedFormVector(horseId) {
+    const recentRaces = db.prepare(`
+      SELECT result FROM race_runners
+      WHERE horse_id = ? AND result IS NOT NULL
+      ORDER BY race_id DESC
+      LIMIT 5
+    `).all(horseId);
+
+    if (!recentRaces || recentRaces.length === 0) return 0;
+
+    // Decay weights: [0.35, 0.25, 0.20, 0.12, 0.08]
+    const weights = [0.35, 0.25, 0.20, 0.12, 0.08];
+    const resultScores = { 'WIN': 1.0, 'PLACE': 0.4, 'LOSE': 0 };
+
+    let weightedSum = 0;
+    let weightSum = 0;
+
+    for (let i = 0; i < recentRaces.length; i++) {
+      const score = resultScores[recentRaces[i].result] || 0;
+      const weight = weights[i];
+      weightedSum += score * weight;
+      weightSum += weight;
+    }
+
+    return weightSum > 0 ? weightedSum / weightSum : 0;
   }
 
   /**
@@ -200,35 +280,31 @@ export class RacePredictor {
     // Previously used bets table which contained failed April 12 betting experiment
     // Now using strike_rate directly as primary signal instead
 
-    // 2. Form trend detection (20%) - momentum vs fading (replaces static form)
-    const formTrend = this.getFormTrend(horseId);
-    const recentRaces = db.prepare(`
-      SELECT
-        COUNT(CASE WHEN result = 'WIN' THEN 1 END) * 1.0 / COUNT(*) as recent_win_rate,
-        COUNT(*) as count
-      FROM (
-        SELECT result FROM race_runners
-        WHERE horse_id = ? AND result IS NOT NULL
-        ORDER BY race_id DESC LIMIT 10
-      )
-    `).get(horseId);
-
-    if (recentRaces?.count > 0) {
-      const baseForm = (recentRaces.recent_win_rate || 0);
-      const trendAdjustedForm = baseForm + formTrend.trend; // Apply trend adjustment
-      probability += Math.min(0.20, Math.max(0, trendAdjustedForm * 0.20));
+    // 2. PHASE 1C: Weighted recent form vector (20%) - better momentum detection
+    const formVector = this.getWeightedFormVector(horseId);
+    if (formVector > 0) {
+      probability += Math.min(0.20, formVector * 0.20);
     } else {
+      // Fallback to strike rate if no recent form data
       const sr = (horse.strike_rate || 15) > 1 ? horse.strike_rate / 100 : (horse.strike_rate || 0.15);
-      probability += Math.min(0.10, sr * 0.20);
+      probability += Math.min(0.20, sr * 0.20);
     }
 
-    // 3. Place rate consistency (18%) - close finishes predict future wins
+    // 3. Place rate consistency (10%, reduced from 18% to accommodate odds movement) - close finishes predict future wins
     const placeRate = horse.place_rate ?? 0.30;
-    probability += Math.min(0.18, placeRate * 0.18);
+    probability += Math.min(0.10, placeRate * 0.10);
+
+    // 3b. PHASE 1B: Odds movement signal (8%) - market backing indicates value
+    const oddsMovement = this.getOddsMovementSignal(horseId, raceId);
+    probability += oddsMovement;
 
     // 4. Barrier analysis (8%) - track-specific barrier suitability
     const barrierAnalysis = this.getBarrierAnalysis(horseId, raceId);
     probability += barrierAnalysis.barrierSignal;
+
+    // 4b. PHASE 1D: Track-specific barrier bias (±4%) - KB historical data
+    const trackBarrierBias = this.getTrackBarrierBias(raceId, barrierAnalysis.preference);
+    probability += trackBarrierBias;
 
     // 4b. Track condition suitability (3%) - how well horse performs in current conditions
     const conditionAnalysis = this.getTrackConditionAnalysis(horseId, raceId);
@@ -284,7 +360,14 @@ export class RacePredictor {
     }
 
     // Final cap ensures probability never exceeds 1.0
-    return Math.min(1.0, Math.max(0, probability));
+    probability = Math.min(1.0, Math.max(0, probability));
+
+    // PHASE 2C: Apply calibration factor based on confidence bucket
+    const confBucket = Math.floor(probability * 100 / 10) * 10;
+    const calibFactor = ModelRetrainer.getCalibrationFactor(confBucket);
+    probability = Math.min(1.0, probability * calibFactor);
+
+    return probability;
   }
 
   /**
@@ -430,16 +513,13 @@ export class RacePredictor {
 
     const picks = runners
       .map(runner => {
-        // Use cached strike_rate as baseline probability
-        const baseProb = Math.min(1.0, (runner.strike_rate || 0.06));
+        // PHASE 1A: Use full predictWinProbability model instead of simplified inline calculation
+        const baseProb = this.predictWinProbability(runner.horse_id, raceId);
 
-        // Apply jockey bonus (cached)
-        const jockeyBonus = jockeyStats[runner.jockey_id] || 0;
-        const trainerBonus = trainerStats[runner.trainer_id] || 0;
-
-        const jockeyFactor = 1 + jockeyBonus;
-        const trainerFactor = 1 + trainerBonus;
-        const totalProb = Math.min(1.0, baseProb * jockeyFactor * trainerFactor);
+        // Apply jockey & trainer bonuses on top of full model
+        const jockeyBonus = (jockeyStats[runner.jockey_id] || 0) * 0.10;
+        const trainerBonus = (trainerStats[runner.trainer_id] || 0) * 0.05;
+        const totalProb = Math.min(1.0, baseProb + jockeyBonus + trainerBonus);
 
         const evWin = this.calculateExpectedValue(totalProb, runner.odds, 'WIN');
         const evPlace = this.calculateExpectedValue(totalProb, runner.odds, 'PLACE');

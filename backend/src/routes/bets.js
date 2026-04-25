@@ -1,6 +1,8 @@
 import express from 'express';
 import db from '../db.js';
 import { CommissionManager } from '../utils/commission-manager.js';
+import ComplianceMonitor from '../ml/compliance-monitor.js';
+import ABTester from '../ml/ab-tester.js';
 
 const router = express.Router();
 
@@ -120,6 +122,19 @@ router.post('/batch', (req, res) => {
     const { bets } = req.body;
     if (!Array.isArray(bets)) {
       return res.status(400).json({ error: 'bets must be an array' });
+    }
+
+    // PHASE 4A: Check drawdown limit before processing any bets
+    const drawdownCheck = ComplianceMonitor.checkDrawdownLimit(7);
+    if (drawdownCheck.triggered) {
+      debug.warn(`Drawdown gate triggered: ${drawdownCheck.message}`);
+      return res.status(400).json({
+        error: 'BETTING_PAUSED',
+        message: drawdownCheck.message,
+        drawdownPercent: drawdownCheck.drawdownPercent,
+        drawdownThreshold: drawdownCheck.drawdownThreshold,
+        action: drawdownCheck.action
+      });
     }
 
     // Apply strategy filters (TESTING MODE - relaxed filters)
@@ -262,24 +277,51 @@ router.post('/batch', (req, res) => {
           continue;
         }
 
-        // Calculate optimal stake using Quarter Kelly Criterion if not provided
-        let finalStake = bet.stake || 100; // Default $100 if not provided
+        // PHASE 3A & 3B: Dynamic stake sizing based on confidence & bankroll
+        let finalStake = bet.stake || 100;
         if (!bet.stake || bet.stake === 'auto') {
           try {
-            // Use default bankroll (no bank table available, use conservative $1000)
-            const bankroll = 1000;
+            // Get live bankroll from database
+            const bankrollResult = db.prepare(`
+              SELECT 1000 + COALESCE(SUM(profit_loss), 0) as current_bank
+              FROM bets
+              WHERE status LIKE 'SETTLED%'
+            `).get();
+            const currentBankroll = bankrollResult?.current_bank || 1000;
+            const startingBankroll = 1000;
 
-            // Use CommissionManager for Quarter Kelly calculation
-            const kellyResult = CommissionManager.adjustKellyForCommission(odds, bet.confidence || 20);
+            // PHASE 3B: Bankroll-aware adjustment factor
+            const bankrollAdjustment = currentBankroll >= startingBankroll * 1.0 ? 1.0 :
+                                      currentBankroll >= startingBankroll * 0.85 ? 0.75 :
+                                      currentBankroll >= startingBankroll * 0.70 ? 0.50 : 0.0;
+
+            if (bankrollAdjustment === 0) {
+              debug.warn('Bankroll below 70% threshold - no new bets');
+              continue;
+            }
+
+            // PHASE 3A: Confidence-tier Kelly multiplier
+            const confidence = bet.confidence || 20;
+            const confidenceMultiplier = confidence >= 35 ? 4.0 :
+                                        confidence >= 25 ? 2.5 :
+                                        confidence >= 18 ? 1.0 : 0.0;
+
+            if (confidenceMultiplier === 0) {
+              debug.log(`${bet.horse} below confidence threshold (${confidence}%)`);
+              continue;
+            }
+
+            // Use CommissionManager for Quarter Kelly
+            const kellyResult = CommissionManager.adjustKellyForCommission(odds, confidence);
             const quarterKellyPercent = parseFloat(kellyResult.kelly.quarterKelly);
-            const quarterKellyFraction = quarterKellyPercent / 100;
-            finalStake = Math.round(quarterKellyFraction * bankroll * 100) / 100;
-            finalStake = Math.max(10, Math.min(finalStake, bankroll * 0.5)); // Min $10, max 50% bankroll
+            const quarterKellyFraction = (quarterKellyPercent / 100) * confidenceMultiplier * bankrollAdjustment;
+            finalStake = Math.round(quarterKellyFraction * currentBankroll * 100) / 100;
+            finalStake = Math.max(10, Math.min(finalStake, currentBankroll * 0.5));
 
-            debug.log(`${bet.horse} Quarter Kelly stake: $${finalStake} (bankroll $${bankroll}, confidence ${bet.confidence}%, odds ${odds})`);
+            debug.log(`${bet.horse} Dynamic stake: $${finalStake} (bank=$${currentBankroll}, conf=${confidence}%, odds=${odds}, adj=${bankrollAdjustment})`);
           } catch (e) {
-            finalStake = 100; // Fall back to $100 if Kelly calculation fails
-            debug.warn(`Kelly calculation failed for ${bet.horse}: ${e.message}, using default $100`);
+            finalStake = 100;
+            debug.warn(`Stake calculation failed: ${e.message}, using default $100`);
           }
         }
 
@@ -299,10 +341,38 @@ router.post('/batch', (req, res) => {
         );
 
         inserted.push(result.lastInsertRowid);
+
+        // PHASE 4C: Record A/B test assignment (post-hoc labeling)
+        ABTester.recordAssignment(result.lastInsertRowid, bet.race_id || 0, horseId);
       } catch (e) {
         console.error('Individual bet insert error:', e);
       }
     }
+
+    // PHASE 3C: Correlation hedging - log same-trainer correlations
+    const raceTrainerMap = {};
+    for (const bet of bets) {
+      const key = `${bet.race_id}_${bet.trainer_id || 'unknown'}`;
+      if (!raceTrainerMap[key]) raceTrainerMap[key] = [];
+      raceTrainerMap[key].push(bet.horse);
+    }
+    const correlations = Object.entries(raceTrainerMap)
+      .filter(([_, horses]) => horses.length > 1)
+      .map(([key, horses]) => ({ race: key.split('_')[0], count: horses.length, horses: horses.join(', ') }));
+
+    // PHASE 3D: Track selection scoring - get best performing tracks
+    const trackScores = db.prepare(`
+      SELECT r.track,
+        COUNT(*) as bets,
+        SUM(CASE WHEN b.result IN ('WIN', 'PLACE') THEN 1 ELSE 0 END) as hits,
+        ROUND(SUM(b.profit_loss), 2) as pnl
+      FROM bets b
+      JOIN races r ON b.race_id = r.id
+      WHERE b.placed_at > datetime('now', '-90 days') AND b.result IS NOT NULL
+      GROUP BY r.track
+      ORDER BY pnl DESC
+      LIMIT 5
+    `).all();
 
     const response = {
       success: true,
@@ -310,7 +380,9 @@ router.post('/batch', (req, res) => {
       ids: inserted,
       filtered: filtered.length > 0 ? filtered : undefined,
       duplicates: duplicates.length > 0 ? duplicates : undefined,
-      total_input: bets.length
+      total_input: bets.length,
+      phase3c_correlations: correlations.length > 0 ? correlations : undefined,
+      phase3d_top_tracks: trackScores.length > 0 ? trackScores : undefined
     };
 
     console.log(`✅ Placed ${inserted.length}/${bets.length} bets (${filtered.length} filtered, ${duplicates.length} dupes)`);

@@ -265,6 +265,268 @@ export class ModelRetrainer {
   }
 
   /**
+   * PHASE 2C: Calibration factor by confidence bucket
+   * Returns actual_rate / predicted_rate correction for each confidence band
+   */
+  static getCalibrationFactor(confidenceBucket) {
+    const prediction_logs = db.prepare(`
+      SELECT
+        COUNT(*) as total,
+        SUM(CASE WHEN result = 'WIN' THEN 1 ELSE 0 END) as wins
+      FROM prediction_logs
+      WHERE confidence >= ? AND confidence < ?
+    `).get(confidenceBucket, confidenceBucket + 10);
+
+    if (!prediction_logs || prediction_logs.total < 20) {
+      return 1.0; // Not enough data, return neutral
+    }
+
+    const actualRate = prediction_logs.wins / prediction_logs.total;
+    const predictedRate = (confidenceBucket + 5) / 100; // Use bucket midpoint
+
+    const factor = actualRate / Math.max(0.01, predictedRate);
+    return Math.min(2.0, Math.max(0.5, factor)); // Cap between 0.5x and 2.0x
+  }
+
+  /**
+   * PHASE 4: Detect model drift
+   * Compare actual win rate vs expected over rolling window
+   */
+  static detectModelDrift(windowDays = 14) {
+    const prediction_logs = db.prepare(`
+      SELECT
+        COUNT(*) as total,
+        SUM(CASE WHEN result = 'WIN' THEN 1 ELSE 0 END) as wins,
+        AVG(confidence) as avg_confidence
+      FROM prediction_logs
+      WHERE logged_at > datetime('now', '-' || ? || ' days')
+    `).get(windowDays);
+
+    if (!prediction_logs || prediction_logs.total < 30) {
+      return { drifting: false, reason: 'Insufficient data' };
+    }
+
+    const actualWR = prediction_logs.wins / prediction_logs.total;
+    const expectedWR = prediction_logs.avg_confidence / 100;
+    const drift = Math.abs(actualWR - expectedWR);
+
+    return {
+      drifting: drift > 0.08,
+      drift: (drift * 100).toFixed(1),
+      threshold: '8%',
+      actualRate: (actualWR * 100).toFixed(1),
+      expectedRate: (expectedWR * 100).toFixed(1),
+      samples: prediction_logs.total
+    };
+  }
+
+  /**
+   * Track-specific performance scoring
+   */
+  static getTrackPerformanceScore(trackName) {
+    const query = `
+      SELECT
+        COUNT(*) as total,
+        SUM(CASE WHEN result IN ('WIN', 'PLACE') THEN 1 ELSE 0 END) as hits,
+        SUM(CASE WHEN result = 'WIN' THEN 1 ELSE 0 END) as wins
+      FROM bets b
+      JOIN races r ON b.race_id = r.id
+      WHERE r.track = ? AND b.placed_at > datetime('now', '-90 days') AND b.result IS NOT NULL
+    `;
+
+    const stats = db.prepare(query).get(trackName);
+    if (!stats || stats.total === 0) {
+      return 1.0; // Neutral score if no data
+    }
+
+    const roi = (stats.hits - stats.total) / stats.total;
+    const score = Math.max(0.5, Math.min(1.5, 1.0 + roi));
+
+    return score;
+  }
+
+  /**
+   * PHASE 4D: Optimize ensemble model weights using coordinate descent
+   * Minimizes Brier score loss over recent prediction_logs
+   * Returns recommended weights for manual review - never auto-applies
+   */
+  static optimizeWeights(minSamples = 50) {
+    try {
+      // Fetch recent predictions
+      const predictions = db.prepare(`
+        SELECT
+          confidence,
+          CASE WHEN result = 'WIN' THEN 1 ELSE 0 END as outcome
+        FROM prediction_logs
+        WHERE logged_at > datetime('now', '-30 days')
+        ORDER BY logged_at DESC
+        LIMIT 500
+      `).all();
+
+      if (predictions.length < minSamples) {
+        return {
+          success: false,
+          message: `Insufficient data: ${predictions.length} samples < ${minSamples} required`,
+          samplesFound: predictions.length,
+          samplesRequired: minSamples
+        };
+      }
+
+      // Initial weights (current ensemble defaults)
+      let weights = {
+        form: 0.45,
+        market: 0.35,
+        kb: 0.20
+      };
+
+      const learningRate = 0.01;
+      const maxIterations = 100;
+      let iteration = 0;
+      let prevLoss = Infinity;
+      const losses = [];
+
+      // Coordinate descent: optimize one weight at a time
+      for (iteration = 0; iteration < maxIterations; iteration++) {
+        const currentLoss = this._calculateBrierScore(predictions, weights);
+        losses.push(currentLoss);
+
+        // Check convergence
+        if (Math.abs(prevLoss - currentLoss) < 0.0001) {
+          break;
+        }
+        prevLoss = currentLoss;
+
+        // Update each weight
+        for (const key of ['form', 'market', 'kb']) {
+          const original = weights[key];
+
+          // Try increasing
+          weights[key] = original + learningRate;
+          this._normalizeWeights(weights);
+          const lossUp = this._calculateBrierScore(predictions, weights);
+
+          // Try decreasing
+          weights[key] = original - learningRate;
+          this._normalizeWeights(weights);
+          const lossDown = this._calculateBrierScore(predictions, weights);
+
+          // Keep best direction
+          if (lossUp < lossDown && lossUp < currentLoss) {
+            weights[key] = original + learningRate;
+          } else if (lossDown < currentLoss) {
+            weights[key] = original - learningRate;
+          } else {
+            weights[key] = original;
+          }
+          this._normalizeWeights(weights);
+        }
+      }
+
+      // Final normalization
+      this._normalizeWeights(weights);
+      const finalLoss = this._calculateBrierScore(predictions, weights);
+
+      // Get current weights for comparison
+      const currentWeights = db.prepare(`
+        SELECT model_name, weight FROM model_weights
+      `).all();
+      const current = Object.fromEntries(currentWeights.map(w => [w.model_name, w.weight]));
+
+      const improvement = ((prevLoss - finalLoss) / prevLoss * 100).toFixed(1);
+
+      return {
+        success: true,
+        samples: predictions.length,
+        iterations: iteration,
+        convergenceImprovement: improvement + '%',
+        current,
+        recommended: {
+          form: weights.form.toFixed(4),
+          market: weights.market.toFixed(4),
+          kb: weights.kb.toFixed(4)
+        },
+        losses: {
+          initial: losses[0]?.toFixed(4),
+          final: finalLoss.toFixed(4),
+          improvement
+        },
+        recommendation: this._getWeightRecommendation(current, weights),
+        nextStep: 'Review recommendation and call POST /api/model/apply-weights to adopt'
+      };
+    } catch (err) {
+      return { success: false, error: err.message };
+    }
+  }
+
+  /**
+   * Calculate Brier score (mean squared error between predicted & actual)
+   */
+  static _calculateBrierScore(predictions, weights) {
+    let sumSquaredError = 0;
+
+    for (const pred of predictions) {
+      const predicted = Math.min(1.0, pred.confidence / 100); // Normalize to 0-1
+      const actual = pred.outcome; // 0 or 1
+      const squaredError = Math.pow(predicted - actual, 2);
+      sumSquaredError += squaredError;
+    }
+
+    return sumSquaredError / predictions.length;
+  }
+
+  /**
+   * Normalize weights to sum to 1.0
+   */
+  static _normalizeWeights(weights) {
+    const total = weights.form + weights.market + weights.kb;
+    weights.form /= total;
+    weights.market /= total;
+    weights.kb /= total;
+  }
+
+  /**
+   * Generate recommendation based on weight changes
+   */
+  static _getWeightRecommendation(current, recommended) {
+    const changes = {
+      form: ((recommended.form - current.form) / current.form * 100).toFixed(1),
+      market: ((recommended.market - current.market) / current.market * 100).toFixed(1),
+      kb: ((recommended.kb - current.kb) / current.kb * 100).toFixed(1)
+    };
+
+    const recs = [];
+    if (Math.abs(parseFloat(changes.form)) > 5) {
+      recs.push(`Form weight ${changes.form > 0 ? 'increase' : 'decrease'} by ${Math.abs(changes.form)}%`);
+    }
+    if (Math.abs(parseFloat(changes.market)) > 5) {
+      recs.push(`Market weight ${changes.market > 0 ? 'increase' : 'decrease'} by ${Math.abs(changes.market)}%`);
+    }
+    if (Math.abs(parseFloat(changes.kb)) > 5) {
+      recs.push(`KB weight ${changes.kb > 0 ? 'increase' : 'decrease'} by ${Math.abs(changes.kb)}%`);
+    }
+
+    return recs.length > 0 ? recs.join('; ') : 'Current weights are optimal';
+  }
+
+  /**
+   * Apply recommended weights to model_weights table
+   */
+  static applyOptimizedWeights(weights) {
+    try {
+      for (const [model, weight] of Object.entries(weights)) {
+        db.prepare(`
+          UPDATE model_weights
+          SET weight = ?, updated_at = datetime('now')
+          WHERE model_name = ?
+        `).run(weight, model);
+      }
+      return { success: true, message: 'Weights applied', weights };
+    } catch (err) {
+      return { success: false, error: err.message };
+    }
+  }
+
+  /**
    * Generate full model report
    */
   static generateFullReport() {

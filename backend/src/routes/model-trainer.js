@@ -5,6 +5,7 @@
 
 import express from 'express';
 import { ModelRetrainer } from '../ml/retrainer.js';
+import ABTester from '../ml/ab-tester.js';
 
 const router = express.Router();
 
@@ -146,6 +147,111 @@ router.post('/retrain', (req, res) => {
     });
   } catch (err) {
     console.error('Retraining error:', err);
+    res.status(500).json({
+      success: false,
+      error: err.message
+    });
+  }
+});
+
+/**
+ * PHASE 4C: GET /api/model/ab-results
+ * Analyze A/B test results across variants
+ */
+router.get('/ab-results', (req, res) => {
+  try {
+    const days = parseInt(req.query.days) || 30;
+    const results = ABTester.analyzeResults(days);
+
+    res.json({
+      success: true,
+      data: results
+    });
+  } catch (err) {
+    console.error('A/B test analysis error:', err);
+    res.status(500).json({
+      success: false,
+      error: err.message
+    });
+  }
+});
+
+/**
+ * PHASE 4C: GET /api/model/ab-status
+ * Get A/B test assignment counts
+ */
+router.get('/ab-status', (req, res) => {
+  try {
+    const status = ABTester.getTestStatus();
+
+    res.json({
+      success: true,
+      data: status
+    });
+  } catch (err) {
+    console.error('A/B test status error:', err);
+    res.status(500).json({
+      success: false,
+      error: err.message
+    });
+  }
+});
+
+/**
+ * PHASE 4D: GET /api/model/optimize-weights
+ * Run coordinate descent to optimize ensemble weights
+ */
+router.get('/optimize-weights', (req, res) => {
+  try {
+    const minSamples = parseInt(req.query.minSamples) || 50;
+    const result = ModelRetrainer.optimizeWeights(minSamples);
+
+    res.json({
+      success: result.success,
+      data: result
+    });
+  } catch (err) {
+    console.error('Weight optimization error:', err);
+    res.status(500).json({
+      success: false,
+      error: err.message
+    });
+  }
+});
+
+/**
+ * PHASE 4D: POST /api/model/apply-weights
+ * Apply recommended weights to model_weights table (manual approval required)
+ */
+router.post('/apply-weights', (req, res) => {
+  try {
+    const { weights } = req.body;
+
+    if (!weights || !weights.form || !weights.market || !weights.kb) {
+      return res.status(400).json({
+        success: false,
+        error: 'Invalid weights object - must have form, market, kb properties'
+      });
+    }
+
+    // Verify weights sum to ~1.0
+    const total = parseFloat(weights.form) + parseFloat(weights.market) + parseFloat(weights.kb);
+    if (Math.abs(total - 1.0) > 0.001) {
+      return res.status(400).json({
+        success: false,
+        error: `Weights must sum to 1.0, got ${total.toFixed(4)}`
+      });
+    }
+
+    const result = ModelRetrainer.applyOptimizedWeights(weights);
+
+    res.json({
+      success: result.success,
+      message: result.message,
+      data: result.weights
+    });
+  } catch (err) {
+    console.error('Weight application error:', err);
     res.status(500).json({
       success: false,
       error: err.message

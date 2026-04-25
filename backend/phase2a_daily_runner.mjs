@@ -67,8 +67,9 @@ try {
         const probWin = strikeRate;
         const evWin = (probWin * runner.starting_odds) - 1;
 
-        // Minimum 10% EV threshold
-        if (evWin >= 0.10) {
+        // Minimum EV threshold (Phase 2A testing: -5% acceptable, avoid heavy neg EV)
+        const EV_THRESHOLD = -0.05; // -5% for validation
+        if (evWin >= EV_THRESHOLD) {
           picks.push({
             horse_id: runner.id,
             horse_name: runner.name,
@@ -79,7 +80,7 @@ try {
         }
       }
 
-      console.log(`   ${picks.length} picks with EV > 10%`);
+      console.log(`   ${picks.length} picks with EV > -5% (validation threshold)`);
 
       if (picks.length === 0) {
         console.log(`   ⏭️  No picks met EV threshold`);
